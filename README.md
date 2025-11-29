@@ -14,4 +14,4 @@ If any developer from Tailfeather Studios would like me to take this down, conta
 ## Requirements
 GameMaker Studio 2 (IDE 2023.11.129 Runtime 2023.11.1.60)
 
-Steamworks SDK version 1.55 (or recent)
+Steamworks SDK version 1.55 (or recent) - You only need this if you intend to keep the steamworks compatibility for the game.
