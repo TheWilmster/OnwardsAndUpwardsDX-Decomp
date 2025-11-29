@@ -6,7 +6,7 @@ accepting = 0;
 alarm[0] = 1;
 key = 0;
 keyboard_lastchar = "";
-input_binding_scan_params_set([], [32769, 32770, 32771, 32772, 32773, 32774], __input_global().__source_gamepad);
+input_binding_scan_params_set([], [gp_face1, gp_face2, gp_face3, gp_face4, gp_shoulderl, gp_shoulderr], __input_global().__source_gamepad);
 input_binding_scan_start(function(arg0)
 {
 	if (arg == 0)

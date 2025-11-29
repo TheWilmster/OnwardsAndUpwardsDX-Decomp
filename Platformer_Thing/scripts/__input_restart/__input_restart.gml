@@ -1,7 +1,8 @@
+// Feather disable all
 function __input_restart()
 {
-	static _global = __input_global();
-	
-	_global.__restart_time = _global.__current_time;
-	__input_clear_all();
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
+    
+    _global.__restart_time = _global.__current_time;
+    __input_clear_all();
 }

@@ -1,30 +1,27 @@
-function input_binding_scan_abort(arg0 = 0)
+// Feather disable all
+/// @desc    Aborts the binding scan process started by input_binding_scan_start(), if one has been started
+/// @param   [playerIndex=0]
+
+function input_binding_scan_abort(_player_index = 0)
 {
-	static _global = __input_global();
-	
-	if (arg0 == -3)
-	{
-		var _p = 0;
-		repeat (4)
-		{
-			input_binding_scan_abort(_p);
-			_p++;
-		}
-		exit;
-	}
-	if (arg0 < 0)
-	{
-		__input_error("Invalid player index provided (", arg0, ")");
-		return undefined;
-	}
-	if (arg0 >= 4)
-	{
-		__input_error("Player index too large (", arg0, " must be less than ", 4, ")\nIncrease INPUT_MAX_PLAYERS to support more players");
-		return undefined;
-	}
-	with (_global.__players[arg0])
-	{
-		if (__rebind_state > 0)
-			__binding_scan_failure((-30 << 0));
-	}
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
+    
+    if (_player_index == all)
+    {
+        var _p = 0;
+        repeat(INPUT_MAX_PLAYERS)
+        {
+            input_binding_scan_abort(_p);
+            ++_p;
+        }
+        
+        return;
+    }
+    
+    __INPUT_VERIFY_PLAYER_INDEX
+    
+    with(_global.__players[_player_index])
+    {
+        if (__rebind_state > 0) __binding_scan_failure(INPUT_BINDING_SCAN_EVENT.ABORTED);
+    }
 }

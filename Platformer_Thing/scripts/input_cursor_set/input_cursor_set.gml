@@ -1,26 +1,27 @@
-function input_cursor_set(arg0, arg1, arg2 = 0, arg3 = false)
+// Feather disable all
+/// @desc    Sets the position of the player's cursor
+/// @param   x
+/// @param   y
+/// @param   [playerIndex=0]
+/// @param   [relative=false]
+
+function input_cursor_set(_x, _y, _player_index = 0, _relative = false)
 {
-	static _global = __input_global();
-	
-	if (arg2 == -3)
-	{
-		var _p = 0;
-		repeat (4)
-		{
-			input_cursor_set(arg0, arg1, _p, arg3);
-			_p++;
-		}
-		exit;
-	}
-	if (arg2 < 0)
-	{
-		__input_error("Invalid player index provided (", arg2, ")");
-		return undefined;
-	}
-	if (arg2 >= 4)
-	{
-		__input_error("Player index too large (", arg2, " must be less than ", 4, ")\nIncrease INPUT_MAX_PLAYERS to support more players");
-		return undefined;
-	}
-	return _global.__players[arg2].__cursor.__set(arg0, arg1, arg3);
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
+    
+    if (_player_index == all)
+    {
+        var _p = 0;
+        repeat(INPUT_MAX_PLAYERS)
+        {
+            input_cursor_set(_x, _y, _p, _relative);
+            ++_p;
+        }
+        
+        return;
+    }
+    
+    __INPUT_VERIFY_PLAYER_INDEX
+    
+    return _global.__players[_player_index].__cursor.__set(_x, _y, _relative);
 }

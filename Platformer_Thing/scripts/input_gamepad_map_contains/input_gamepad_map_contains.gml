@@ -1,20 +1,35 @@
-function input_gamepad_map_contains(arg0, arg1)
+// Feather disable all
+/// @desc    Returns if the indicated buttons/axes are mapped for the current gamepad
+/// @param   gamepadIndex
+/// @param   GMconstant/array
+
+function input_gamepad_map_contains(_index, _gm)
 {
-	static _global = __input_global();
-	
-	if (arg0 == undefined || arg0 < 0 || arg0 >= array_length(_global.__gamepads))
-		return false;
-	var _gamepad = _global.__gamepads[arg0];
-	if (!is_struct(_gamepad))
-		return false;
-	if (!is_array(arg1))
-		arg1 = [arg1];
-	var _i = 0;
-	repeat (array_length(arg1))
-	{
-		if (input_gamepad_constant_get_name(arg1[_i]) == "unknown" || (_gamepad.custom_mapping && variable_struct_get(_gamepad.mapping_gm_to_raw, array_get(arg1, _i)) == undefined))
-			return false;
-		_i++;
-	}
-	return true;
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
+    
+    if ((_index == undefined)
+    ||  (_index < 0)
+    ||  (_index >= array_length(_global.__gamepads)))
+    {
+        return false;
+    }
+    
+    var _gamepad = _global.__gamepads[_index];
+    if (!is_struct(_gamepad)) return false;
+    
+    if not (is_array(_gm)) _gm = [_gm];    
+    
+    var _i = 0;
+    repeat(array_length(_gm))
+    {
+        if ((input_gamepad_constant_get_name(_gm[_i]) == "unknown")
+        ||  (_gamepad.custom_mapping && (_gamepad.mapping_gm_to_raw[$ _gm[_i]] == undefined)))
+        {
+            return false;
+        }
+        
+        ++_i;
+    }
+    
+    return true;
 }

@@ -55,24 +55,24 @@ else if (step == 7)
 	draw_set_font(global.font);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_top);
-	draw_text_ext(80, 8, "Controller test;\npress " + return_controller_button_name(32778) + " to leave.", 8, 160);
+	draw_text_ext(80, 8, "Controller test;\npress " + return_controller_button_name(gp_start) + " to leave.", 8, 160);
 	draw_set_halign(fa_left);
 	if (gamepad_button_check(global.gamepad, gp_face1))
-		draw_text(0, 48, return_controller_button_name(32769));
+		draw_text(0, 48, return_controller_button_name(gp_face1));
 	if (gamepad_button_check(global.gamepad, gp_face2))
-		draw_text(16, 48, return_controller_button_name(32770));
+		draw_text(16, 48, return_controller_button_name(gp_face2));
 	if (gamepad_button_check(global.gamepad, gp_face3))
-		draw_text(32, 48, return_controller_button_name(32771));
+		draw_text(32, 48, return_controller_button_name(gp_face3));
 	if (gamepad_button_check(global.gamepad, gp_face4))
-		draw_text(48, 48, return_controller_button_name(32772));
+		draw_text(48, 48, return_controller_button_name(gp_face4));
 	if (gamepad_button_check(global.gamepad, gp_shoulderl))
-		draw_text(64, 48, return_controller_button_name(32773));
+		draw_text(64, 48, return_controller_button_name(gp_shoulderl));
 	if (gamepad_button_check(global.gamepad, gp_shoulderr))
-		draw_text(80, 48, return_controller_button_name(32774));
+		draw_text(80, 48, return_controller_button_name(gp_shoulderr));
 	if (gamepad_button_check(global.gamepad, gp_shoulderlb))
-		draw_text(96, 48, return_controller_button_name(32775));
+		draw_text(96, 48, return_controller_button_name(gp_shoulderlb));
 	if (gamepad_button_check(global.gamepad, gp_shoulderrb))
-		draw_text(128, 48, return_controller_button_name(32776));
+		draw_text(128, 48, return_controller_button_name(gp_shoulderrb));
 }
 else if (step == 8)
 {

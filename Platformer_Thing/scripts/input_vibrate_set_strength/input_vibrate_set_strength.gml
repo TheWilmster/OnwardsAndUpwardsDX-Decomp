@@ -1,17 +1,14 @@
-function input_vibrate_set_strength(arg0, arg1 = 0)
+// Feather disable all
+/// @desc    Sets the strength of vibration for the player
+/// @param   strength
+/// @param   [playerIndex=0]
+
+function input_vibrate_set_strength(_strength, _player_index = 0)
 {
-	static _global = __input_global();
-	
-	if (arg1 < 0)
-	{
-		__input_error("Invalid player index provided (", arg1, ")");
-		return undefined;
-	}
-	if (arg1 >= 4)
-	{
-		__input_error("Player index too large (", arg1, " must be less than ", 4, ")\nIncrease INPUT_MAX_PLAYERS to support more players");
-		return undefined;
-	}
-	arg0 = clamp(arg0, 0, 1);
-	_global.__players[arg1].__vibration_strength = arg0;
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
+    __INPUT_VERIFY_PLAYER_INDEX
+    
+    _strength = clamp(_strength, 0, 1);
+    
+    _global.__players[_player_index].__vibration_strength = _strength;
 }

@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "02  2D Checkers",
+    "path": "folders/Input/02  2D Checkers.yy",
   },
 }

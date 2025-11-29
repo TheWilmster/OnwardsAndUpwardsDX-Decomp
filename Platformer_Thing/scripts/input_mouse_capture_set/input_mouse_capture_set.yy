@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "11  Mouse Capture",
+    "path": "folders/Input/11  Mouse Capture.yy",
   },
 }

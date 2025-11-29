@@ -1,17 +1,14 @@
-function input_binding_scan_in_progress(arg0 = 0)
+// Feather disable all
+/// @desc    Returns whether the given player is currently scanning for bindings
+/// @param   [playerIndex=0]
+
+function input_binding_scan_in_progress(_player_index = 0)
 {
-	static _global = __input_global();
-	
-	if (arg0 < 0)
-	{
-		__input_error("Invalid player index provided (", arg0, ")");
-		return undefined;
-	}
-	if (arg0 >= 4)
-	{
-		__input_error("Player index too large (", arg0, " must be less than ", 4, ")\nIncrease INPUT_MAX_PLAYERS to support more players");
-		return undefined;
-	}
-	with (_global.__players[arg0])
-		return __rebind_state > 0;
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
+    __INPUT_VERIFY_PLAYER_INDEX
+    
+    with(_global.__players[_player_index])
+    {
+        return (__rebind_state > 0);
+    }
 }

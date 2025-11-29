@@ -1,29 +1,26 @@
-function input_cursor_limit_get(arg0 = 0)
+// Feather disable all
+/// @desc    Returns the cursor limit state as a struct
+///          If no limit has been set, this function returns <undefined>
+/// @param   [playerIndex=0]
+
+function input_cursor_limit_get(_player_index = 0)
 {
-	static _global = __input_global();
-	
-	if (arg0 < 0)
-	{
-		__input_error("Invalid player index provided (", arg0, ")");
-		return undefined;
-	}
-	if (arg0 >= 4)
-	{
-		__input_error("Player index too large (", arg0, " must be less than ", 4, ")\nIncrease INPUT_MAX_PLAYERS to support more players");
-		return undefined;
-	}
-	with (_global.__players[arg0].__cursor)
-	{
-		return 
-		{
-			left: __limit_l,
-			top: __limit_t,
-			right: __limit_r,
-			bottom: __limit_b,
-			circle_x: __limit_x,
-			circle_y: __limit_y,
-			circle_radius: __limit_radius,
-			boundary_margin: __limit_boundary_margin
-		};
-	}
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
+    __INPUT_VERIFY_PLAYER_INDEX
+    
+    with(_global.__players[_player_index].__cursor)
+    {
+        return {
+            left:   __limit_l,
+            top:    __limit_t,
+            right:  __limit_r,
+            bottom: __limit_b,
+            
+            circle_x:      __limit_x,
+            circle_y:      __limit_y,
+            circle_radius: __limit_radius,
+            
+            boundary_margin: __limit_boundary_margin,
+        }
+    }
 }

@@ -1,18 +1,18 @@
-function input_profile_exists(arg0, arg1 = 0)
+// Feather disable all
+/// @desc    Returns whether the profile with the given name exists
+/// @param   profileName
+/// @param   [playerIndex=0]
+
+function input_profile_exists(_profile_name, _player_index = 0)
 {
-	static _global = __input_global();
-	
-	if (is_string(arg1) && arg1 == "default")
-		return _global.__default_player.__profile_exists(arg0);
-	if (arg1 < 0)
-	{
-		__input_error("Invalid player index provided (", arg1, ")");
-		return undefined;
-	}
-	if (arg1 >= 4)
-	{
-		__input_error("Player index too large (", arg1, " must be less than ", 4, ")\nIncrease INPUT_MAX_PLAYERS to support more players");
-		return undefined;
-	}
-	return _global.__players[arg1].__profile_exists(arg0);
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
+    
+    if (is_string(_player_index) && (_player_index == "default"))
+    {
+        return _global.__default_player.__profile_exists(_profile_name);
+    }
+    
+    __INPUT_VERIFY_PLAYER_INDEX
+    
+    return _global.__players[_player_index].__profile_exists(_profile_name);
 }

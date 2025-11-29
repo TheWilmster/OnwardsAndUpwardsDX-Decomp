@@ -1,29 +1,32 @@
-function input_combo_reset(arg0, arg1 = 0)
+// Feather disable all
+
+/// Resets a combo for the given player
+/// 
+/// You can use the GML keyword <all> for the combo name to reset every combo
+/// 
+/// @param   comboName
+/// @param   [playerIndex=0]
+
+function input_combo_reset(_name, _player_index = 0)
 {
-	static _global = __input_global();
-	
-	if (arg0 == -3)
-	{
-		var _i = 0;
-		repeat (array_length(_global.__combo_verb_array))
-		{
-			input_combo_reset(_global.__combo_verb_array[_i], arg1);
-			_i++;
-		}
-		exit;
-	}
-	if (arg1 < 0)
-	{
-		__input_error("Invalid player index provided (", arg1, ")");
-		return undefined;
-	}
-	if (arg1 >= 4)
-	{
-		__input_error("Player index too large (", arg1, " must be less than ", 4, ")\nIncrease INPUT_MAX_PLAYERS to support more players");
-		return undefined;
-	}
-	var _combo_state = variable_struct_get(_global.__players[arg1].__combo_state_dict, arg0);
-	if (!is_struct(_combo_state))
-		__input_error("Combo with name \"", arg0, "\" doesn't exist");
-	_combo_state.__reset();
+    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
+    
+    if (_name == all)
+    {
+        var _i = 0;
+        repeat(array_length(_global.__combo_verb_array))
+        {
+            input_combo_reset(_global.__combo_verb_array[_i], _player_index);
+            ++_i;
+        }
+        
+        return;
+    }
+    
+    __INPUT_VERIFY_PLAYER_INDEX
+    
+    var _combo_state = _global.__players[_player_index].__combo_state_dict[$ _name];
+    if (not is_struct(_combo_state)) __input_error("Combo with name \"", _name, "\" doesn't exist");
+    
+    _combo_state.__reset();
 }
