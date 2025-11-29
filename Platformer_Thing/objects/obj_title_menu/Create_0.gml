@@ -1,0 +1,18 @@
+selection = 0;
+ini_open("controls.onuc");
+perfect = ini_read_real("Perfect", "Perfect", 0);
+ini_close();
+obj_menu_revamped.menu_options = 5;
+obj_menu_revamped.menu_label = ["Gameplay", "Settings", "Merits", "About Us", "Quit"];
+obj_menu_revamped.menu_description = ["", "", "", "", ""];
+obj_menu_revamped.menu_description_locked = ["", "", "", "", ""];
+obj_menu_revamped.menu_function = ["redirect", "room", "room", "room", "quit"];
+obj_menu_revamped.menu_variable = [obj_title_menu_gameplay, rm_runmenu, rm_meritsmenu, rm_aboutme, 0];
+obj_menu_revamped.menu_var_max = [0, 0, 0, 0, 0];
+obj_menu_revamped.menu_var_min = [0, 0, 0, 0, 0];
+obj_menu_revamped.menu_var_inc = [0, 0, 0, 0, 0];
+obj_menu_revamped.menu_var_req = [0, 0, 0, 0, 0];
+obj_menu_revamped.menu_toggle_true = ["N/A", "N/A", "N/A", "N/A", "N/A"];
+obj_menu_revamped.menu_toggle_false = ["N/A", "N/A", "N/A", "N/A", "N/A"];
+obj_menu_revamped.last_menu = -1;
+exiting = 0;

@@ -1,0 +1,16 @@
+done = 0;
+exiting = 0;
+obj_menu_revamped.menu_options = 3;
+obj_menu_revamped.menu_label = ["Main Game", "Customs", "Go Back"];
+obj_menu_revamped.menu_description = ["", "", ""];
+obj_menu_revamped.menu_description_locked = ["", "", ""];
+obj_menu_revamped.menu_function = ["redirectother", "redirectrequirement", "redirect"];
+obj_menu_revamped.menu_variable = [0, obj_file_selector, obj_title_menu];
+obj_menu_revamped.menu_var_max = [0, 0, 0];
+obj_menu_revamped.menu_var_min = [0, 0, 0];
+obj_menu_revamped.menu_var_inc = [0, 0, 0];
+obj_menu_revamped.menu_var_req = [0, "tutorial_complete", 0];
+obj_menu_revamped.menu_toggle_true = ["N/A", "N/A", "N/A"];
+obj_menu_revamped.menu_toggle_false = ["N/A", "N/A", "N/A"];
+obj_menu_revamped.last_menu = obj_title_menu;
+obj_menu_revamped.last_room = -1;

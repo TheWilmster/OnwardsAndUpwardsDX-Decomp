@@ -1,0 +1,14 @@
+done = 0;
+obj_menu_revamped.menu_options = 3;
+obj_menu_revamped.menu_label = ["BGM Volume", "SFX Volume", "Apply"];
+obj_menu_revamped.menu_description = ["Adjust the volume of the game's music. Current setting: ", "Adjust the volume of the game's sound effects.\nCurrent setting: ", "Save these settings and return to the previous screen."];
+obj_menu_revamped.menu_description_locked = ["Adjust the volume of the game's music. Current setting: ", "Adjust the volume of the game's sound effects.\nCurrent setting: ", "Save these settings and return to the previous screen."];
+obj_menu_revamped.menu_function = ["variable", "variable", "redirect"];
+obj_menu_revamped.menu_variable = ["music_volume", "sound_fx", obj_runmenu_main];
+obj_menu_revamped.menu_var_max = [100, 100, 0];
+obj_menu_revamped.menu_var_min = [0, 0, 0];
+obj_menu_revamped.menu_var_inc = [10, 10, 0];
+obj_menu_revamped.menu_var_req = [0, 0, 0];
+obj_menu_revamped.menu_toggle_true = ["N/A", "N/A", "N/A"];
+obj_menu_revamped.menu_toggle_false = ["N/A", "N/A", "N/A"];
+obj_menu_revamped.last_menu = obj_runmenu_main;

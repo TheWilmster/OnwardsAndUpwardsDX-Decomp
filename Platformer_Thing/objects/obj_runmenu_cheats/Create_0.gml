@@ -1,0 +1,14 @@
+done = 0;
+obj_menu_revamped.menu_options = 8;
+obj_menu_revamped.menu_label = ["Jump Height", "Speed", "Hook Length", "Invincible", "Coin Magnet", "Flight Mode", "Super Cheat", "Apply"];
+obj_menu_revamped.menu_description = ["Adjust Lily's jump height.\nCurrent setting: x", "Adjust Lily's speed. Current setting: x", "Adjust the grappling hook's length. Current setting: x", "Make Lily invincible. Disables achievements. Current setting: ", "Coins will become attracted to Lily. Current setting: ", "Hold UP to make Lily float through the air.\nCurrent setting: ", "Super cheats for super players. Only the bravest can handle these.", "Return to the previous screen, applying these cheats."];
+obj_menu_revamped.menu_description_locked = ["Adjust Lily's jump height. Current setting: x", "Adjust Lily's speed. Current setting: x", "Adjust the grappling hook's length. Current setting: x", "Make Lily invincible. Current setting: ", "Coins will become attracted to Lily. Current setting: ", "Hold UP to make Lily float through the air. Current setting: ", "Super cheats for super players. Only the bravest can handle these.", "Return to the previous screen, applying these cheats."];
+obj_menu_revamped.menu_function = ["variable", "variable", "variable", "toggle", "toggle", "toggle", "redirect", "redirect"];
+obj_menu_revamped.menu_variable = ["jump_modifier", "speed_modifier", "grapple_modifier", "invincible_invincibility", "money_magnet", "flight", obj_runmenu_supercheats, obj_runmenu_main];
+obj_menu_revamped.menu_var_max = [3, 3, 3, 0, 0, 0, 0, 0, 0];
+obj_menu_revamped.menu_var_min = [0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0];
+obj_menu_revamped.menu_var_inc = [0.1, 0.1, 0.1, 0, 0, 0, 0, 0, 0];
+obj_menu_revamped.menu_var_req = [0, 0, 0, 0, 0, 0, 0, 0];
+obj_menu_revamped.menu_toggle_true = ["N/A", "N/A", "N/A", "ON", "ON", "ON", "N/A", "N/A"];
+obj_menu_revamped.menu_toggle_false = ["N/A", "N/A", "N/A", "OFF", "OFF", "OFF", "N/A", "N/A"];
+obj_menu_revamped.last_menu = obj_runmenu_main;

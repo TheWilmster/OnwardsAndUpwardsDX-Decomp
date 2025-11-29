@@ -1,0 +1,10 @@
+mode = 1;
+modestart = 1;
+yprevious4 = 0;
+yprevious3 = 0;
+yprevious2 = 0;
+attribute = 0;
+spd = 1;
+siz = 1;
+tick = 0;
+alarm[0] = 1;

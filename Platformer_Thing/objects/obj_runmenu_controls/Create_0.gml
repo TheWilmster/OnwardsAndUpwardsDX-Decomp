@@ -1,0 +1,14 @@
+done = 0;
+obj_menu_revamped.menu_options = 4;
+obj_menu_revamped.menu_label = ["Jump/Accept", "Grapple", "Erase Data", "Apply"];
+obj_menu_revamped.menu_description = ["Current setting: ", "Current setting: ", "Erases the current config data.", "Save these settings and return to the previous screen."];
+obj_menu_revamped.menu_description_locked = ["Current setting: ", "Current setting: ", "Erases the current config data.", "Save these settings and return to the previous screen."];
+obj_menu_revamped.menu_function = ["redirect", "redirect", "redirect", "redirect"];
+obj_menu_revamped.menu_variable = [obj_controls_waitforbutton, obj_controls_waitforbutton, obj_deleteconfirmation_controller, obj_runmenu_main];
+obj_menu_revamped.menu_var_max = [0, 0, 0, 0];
+obj_menu_revamped.menu_var_min = [0, 0, 0, 0];
+obj_menu_revamped.menu_var_inc = [0, 0, 0, 0];
+obj_menu_revamped.menu_var_req = [0, 0, 0, 0];
+obj_menu_revamped.menu_toggle_true = ["N/A", "N/A", "N/A", "N/A"];
+obj_menu_revamped.menu_toggle_false = ["N/A", "N/A", "N/A", "N/A"];
+obj_menu_revamped.last_menu = obj_runmenu_main;
