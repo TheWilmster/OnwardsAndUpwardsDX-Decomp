@@ -1,8 +1,8 @@
-function return_controller_button_name(arg0)
+function return_controller_button_name(_gamepad_button)
 {
 	if (gamepad_is_connected(4))
 	{
-		if (arg0 == gp_face1)
+		if (_gamepad_button == gp_face1)
 		{
 			if (global.controller_config == "xbox")
 				return "#";
@@ -19,7 +19,7 @@ function return_controller_button_name(arg0)
 			else if (global.respawn_button == gp_face1)
 				return "RESPAWN";
 		}
-		if (arg0 == gp_face2)
+		if (_gamepad_button == gp_face2)
 		{
 			if (global.controller_config == "xbox")
 				return "$";
@@ -36,7 +36,7 @@ function return_controller_button_name(arg0)
 			else if (global.respawn_button == gp_face2)
 				return "RESPAWN";
 		}
-		if (arg0 == gp_face3)
+		if (_gamepad_button == gp_face3)
 		{
 			if (global.controller_config == "xbox")
 				return "<";
@@ -53,7 +53,7 @@ function return_controller_button_name(arg0)
 			else if (global.respawn_button == gp_face3)
 				return "RESPAWN";
 		}
-		if (arg0 == gp_face4)
+		if (_gamepad_button == gp_face4)
 		{
 			if (global.controller_config == "xbox")
 				return "=";
@@ -70,15 +70,15 @@ function return_controller_button_name(arg0)
 			else if (global.respawn_button == gp_face4)
 				return "RESPAWN";
 		}
-		if (arg0 == gp_shoulderl)
+		if (_gamepad_button == gp_shoulderl)
 			return ">";
-		if (arg0 == gp_shoulderr)
+		if (_gamepad_button == gp_shoulderr)
 			return "@";
-		if (arg0 == gp_shoulderlb)
+		if (_gamepad_button == gp_shoulderlb)
 			return "^";
-		if (arg0 == gp_shoulderrb)
+		if (_gamepad_button == gp_shoulderrb)
 			return "_";
-		if (arg0 == gp_start)
+		if (_gamepad_button == gp_start)
 		{
 			if (global.controller_config == "xbox")
 				return "{";
@@ -87,7 +87,7 @@ function return_controller_button_name(arg0)
 			else if (global.controller_config == "playstation")
 				return "OPTIONS";
 		}
-		if (arg0 == gp_select)
+		if (_gamepad_button == gp_select)
 		{
 			if (global.controller_config == "xbox")
 				return "}";
@@ -99,25 +99,25 @@ function return_controller_button_name(arg0)
 	}
 	else
 	{
-		if (arg0 == gp_face1)
+		if (_gamepad_button == gp_face1)
 			return "#";
-		if (arg0 == gp_face2)
+		if (_gamepad_button == gp_face2)
 			return "$";
-		if (arg0 == gp_face3)
+		if (_gamepad_button == gp_face3)
 			return "<";
-		if (arg0 == gp_face4)
+		if (_gamepad_button == gp_face4)
 			return "=";
-		if (arg0 == gp_shoulderl)
+		if (_gamepad_button == gp_shoulderl)
 			return ">";
-		if (arg0 == gp_shoulderr)
+		if (_gamepad_button == gp_shoulderr)
 			return "@";
-		if (arg0 == gp_shoulderlb)
+		if (_gamepad_button == gp_shoulderlb)
 			return "^";
-		if (arg0 == gp_shoulderrb)
+		if (_gamepad_button == gp_shoulderrb)
 			return "_";
-		if (arg0 == gp_start)
+		if (_gamepad_button == gp_start)
 			return "{";
-		if (arg0 == gp_select)
+		if (_gamepad_button == gp_select)
 			return "}";
 	}
 }

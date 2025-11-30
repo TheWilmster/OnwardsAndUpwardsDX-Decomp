@@ -1,8 +1,8 @@
-function load_level(arg0)
+function load_level(_file_name)
 {
 	try
 	{
-		lvldata = buffer_load(arg0);
+		lvldata = buffer_load(_file_name);
 		buffer_seek(lvldata, buffer_seek_start, 0);
 		global.description = buffer_read(lvldata, buffer_string);
 		global.validated = buffer_read(lvldata, buffer_u8);
@@ -55,7 +55,7 @@ function load_level(arg0)
 		global.objective_value = buffer_read(lvldata, buffer_u8);
 		lives = buffer_read(lvldata, buffer_u8);
 		buffer_delete(lvldata);
-		window_set_caption("Onward and Upward! DX - " + arg0);
+		window_set_caption("Onward and Upward! DX - " + _file_name);
 		return 1;
 	}
 	catch (exception)
@@ -64,7 +64,7 @@ function load_level(arg0)
 		global.missing = "dataload";
 		global.exception = exception.longMessage;
 		global.stack = exception.stacktrace;
-		global.whatfailed = arg0;
+		global.whatfailed = _file_name;
 		room_goto(rm_error);
 	}
 }

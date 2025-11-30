@@ -1,14 +1,14 @@
-function get_time_limit(arg0)
+function get_time_limit(_tens_of_seconds)
 {
 	minutes = 0;
-	arg0 *= 10;
-	while (arg0 >= 60)
+	_tens_of_seconds *= 10;
+	while (_tens_of_seconds >= 60)
 	{
-		arg0 -= 60;
+		_tens_of_seconds -= 60;
 		minutes += 1;
 	}
-	if (arg0 == 0)
-		return string(minutes) + ":0" + string(arg0);
+	if (_tens_of_seconds == 0)
+		return string(minutes) + ":0" + string(_tens_of_seconds);
 	else
-		return string(minutes) + ":" + string(arg0);
+		return string(minutes) + ":" + string(_tens_of_seconds);
 }

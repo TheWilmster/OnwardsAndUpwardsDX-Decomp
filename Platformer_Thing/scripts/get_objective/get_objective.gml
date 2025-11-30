@@ -1,15 +1,15 @@
-function get_objective(arg0)
+function get_objective(_objective_id)
 {
-	switch (arg0)
+	switch (_objective_id)
 	{
 		case 1:
-			if (arg0 == 0)
+			if (_objective_id == 0)
 				return "Collect all coins.";
 			else
 				return "Collect " + string(global.objective_value) + " coins.";
 			break;
 		case 2:
-			if (arg0 == 0)
+			if (_objective_id == 0)
 				return "Touch every save point.";
 			else
 				return "Touch " + string(global.objective_value) + "\nsave points.";

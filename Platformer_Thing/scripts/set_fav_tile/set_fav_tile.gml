@@ -1,6 +1,6 @@
-function set_fav_tile(arg0)
+function set_fav_tile(_tile)
 {
-	if (!array_contains(fav_tiles, arg0))
+	if (!array_contains(fav_tiles, _tile))
 	{
 		fav_tile_set = 0;
 		for (var i = 0; i < 10; i++)
@@ -9,7 +9,7 @@ function set_fav_tile(arg0)
 			{
 				if (fav_tiles[i] == 0)
 				{
-					fav_tiles[i] = arg0;
+					fav_tiles[i] = _tile;
 					fav_tile_set = 1;
 					break;
 				}
@@ -29,7 +29,7 @@ function set_fav_tile(arg0)
 		{
 			if (fav_tile_set == 0)
 			{
-				if (fav_tiles[i] == arg0)
+				if (fav_tiles[i] == _tile)
 				{
 					fav_tiles[i] = 0;
 					fav_tile_set = 1;

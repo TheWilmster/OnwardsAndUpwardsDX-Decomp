@@ -1,13 +1,13 @@
-function make_map(arg0)
+function make_map(_map_data)
 {
 	try
 	{
-		arg0 = buffer_create(100, buffer_grow, 2);
+		_map_data = buffer_create(100, buffer_grow, 2);
 		tilemap = layer_tilemap_get_id("Collision");
 		for (var i = 0; i < 96; i++)
 		{
 			for (var j = 0; j < 160; j++)
-				buffer_write(arg0, buffer_u16, tilemap_get_at_pixel(tilemap, (j * 16) + 4, (i * 16) + 4));
+				buffer_write(_map_data, buffer_u16, tilemap_get_at_pixel(tilemap, (j * 16) + 4, (i * 16) + 4));
 		}
 		return 1;
 	}

@@ -1,10 +1,10 @@
-function draw_text_outline(arg0, arg1, arg2, arg3, arg4)
+function draw_text_outline(_x, _y, _string, _outline_color, _text_color)
 {
-	draw_set_colour(arg3);
-	draw_text(arg0 + 1, arg1, arg2);
-	draw_text(arg0 - 1, arg1, arg2);
-	draw_text(arg0, arg1 + 1, arg2);
-	draw_text(arg0, arg1 - 1, arg2);
-	draw_set_colour(arg4);
-	draw_text(arg0, arg1, arg2);
+	draw_set_colour(_outline_color);
+	draw_text(_x + 1, _y, _string);
+	draw_text(_x - 1, _y, _string);
+	draw_text(_x, _y + 1, _string);
+	draw_text(_x, _y - 1, _string);
+	draw_set_colour(_text_color);
+	draw_text(_x, _y, _string);
 }

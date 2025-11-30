@@ -1,6 +1,6 @@
-function return_steam_error_meaning(arg0)
+function return_steam_error_meaning(_error_id)
 {
-	switch (arg0)
+	switch (_error_id)
 	{
 		case 1:
 			return "Success";

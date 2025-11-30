@@ -1,44 +1,44 @@
-function check_for_bad_language(arg0)
+function check_for_bad_language(_string)
 {
-	swear = 0;
-	arg0 = string_lower(arg0);
-	arg0 += " ";
-	arg0 = " " + arg0;
-	arg0 = string_replace_all(arg0, "fuck", "¤");
-	arg0 = string_replace_all(arg0, " shit", "¤");
-	arg0 = string_replace_all(arg0, " bullshit ", "¤");
-	arg0 = string_replace_all(arg0, " ass", "¤");
-	arg0 = string_replace_all(arg0, " dumbass ", "¤");
-	arg0 = string_replace_all(arg0, " cunt ", "¤");
-	arg0 = string_replace_all(arg0, " tit ", "¤");
-	arg0 = string_replace_all(arg0, " tits ", "¤");
-	arg0 = string_replace_all(arg0, " titty ", "¤");
-	arg0 = string_replace_all(arg0, " titties ", "¤");
-	arg0 = string_replace_all(arg0, " penis ", "¤");
-	arg0 = string_replace_all(arg0, " penises ", "¤");
-	arg0 = string_replace_all(arg0, " pussy ", "¤");
-	arg0 = string_replace_all(arg0, " vagina", "¤");
-	arg0 = string_replace_all(arg0, " nigg", "¤");
-	arg0 = string_replace_all(arg0, " boob", "¤");
-	arg0 = string_replace_all(arg0, "damn", "¤");
-	arg0 = string_replace_all(arg0, " bitch", "¤");
-	arg0 = string_replace_all(arg0, " whore ", "¤");
-	arg0 = string_replace_all(arg0, " slut ", "¤");
-	arg0 = string_replace_all(arg0, " piss", "¤");
-	arg0 = string_replace_all(arg0, " rape", "¤");
-	arg0 = string_replace_all(arg0, " rapi", "¤");
-	arg0 = string_replace_all(arg0, " faggot", "¤");
-	arg0 = string_replace_all(arg0, " hitler ", "¤");
-	arg0 = string_replace_all(arg0, " abdl", "¤");
-	arg0 = string_replace_all(arg0, " bdsm ", "¤");
-	arg0 = string_replace_all(arg0, " bugger ", "¤");
-	arg0 = string_replace_all(arg0, " spastic ", "¤");
-	arg0 = string_replace_all(arg0, " bollock", "¤");
-	arg0 = string_replace_all(arg0, " fag ", "¤");
-	for (var i = 0; i < string_length(arg0); i++)
+	swear = false;
+	_string = string_lower(_string);
+	_string += " ";
+	_string = " " + _string;
+	_string = string_replace_all(_string, "fuck", "¤");
+	_string = string_replace_all(_string, " shit", "¤");
+	_string = string_replace_all(_string, " bullshit ", "¤");
+	_string = string_replace_all(_string, " ass", "¤");
+	_string = string_replace_all(_string, " dumbass ", "¤");
+	_string = string_replace_all(_string, " cunt ", "¤");
+	_string = string_replace_all(_string, " tit ", "¤");
+	_string = string_replace_all(_string, " tits ", "¤");
+	_string = string_replace_all(_string, " titty ", "¤");
+	_string = string_replace_all(_string, " titties ", "¤");
+	_string = string_replace_all(_string, " penis ", "¤");
+	_string = string_replace_all(_string, " penises ", "¤");
+	_string = string_replace_all(_string, " pussy ", "¤");
+	_string = string_replace_all(_string, " vagina", "¤");
+	_string = string_replace_all(_string, " nigg", "¤");
+	_string = string_replace_all(_string, " boob", "¤");
+	_string = string_replace_all(_string, "damn", "¤");
+	_string = string_replace_all(_string, " bitch", "¤");
+	_string = string_replace_all(_string, " whore ", "¤");
+	_string = string_replace_all(_string, " slut ", "¤");
+	_string = string_replace_all(_string, " piss", "¤");
+	_string = string_replace_all(_string, " rape", "¤");
+	_string = string_replace_all(_string, " rapi", "¤");
+	_string = string_replace_all(_string, " faggot", "¤");
+	_string = string_replace_all(_string, " hitler ", "¤");
+	_string = string_replace_all(_string, " abdl", "¤");
+	_string = string_replace_all(_string, " bdsm ", "¤");
+	_string = string_replace_all(_string, " bugger ", "¤");
+	_string = string_replace_all(_string, " spastic ", "¤");
+	_string = string_replace_all(_string, " bollock", "¤");
+	_string = string_replace_all(_string, " fag ", "¤");
+	for (var i = 0; i < string_length(_string); i++)
 	{
-		if (string_char_at(arg0, i) == "¤")
-			swear = 1;
+		if (string_char_at(_string, i) == "¤")
+			swear = true;
 	}
 	return swear;
 }

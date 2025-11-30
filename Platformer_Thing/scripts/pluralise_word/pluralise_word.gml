@@ -1,12 +1,14 @@
-function pluralise_word(arg0, arg1, arg2)
+// NO fucking idea what this function is used for -TheWilmster
+function pluralise_word(_string, _condition, _default)
 {
-	if (arg1 == 1)
+	if (_condition == 1)
 	{
-		return arg0;
+		return _string;
 	}
 	else
 	{
-		arg0 = arg2;
-		return arg0;
+		// why not just return _default? -TheWilmster
+		_string = _default;
+		return _string;
 	}
 }
