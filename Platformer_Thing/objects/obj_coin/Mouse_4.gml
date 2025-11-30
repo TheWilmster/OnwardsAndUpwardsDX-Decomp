@@ -1,5 +1,5 @@
 if (instance_exists(obj_editor))
 {
-	if (obj_editor.show_menu == 0 && obj_editor.show_tiles == 0)
+	if (obj_editor.show_menu == false && obj_editor.show_tiles == false)
 		global.selected_entity = id;
 }

@@ -34,14 +34,14 @@ if (instance_exists(obj_editor))
 {
 	if (obj_editor.show_menu == 0 && obj_editor.show_tiles == 0 && global.selected_entity == id)
 	{
-		if (mouse_wheel_down() || (input_check_pressed("down") && running_on_deck() == 1))
+		if (mouse_wheel_down() || (input_check_pressed("down") && running_on_deck() == true))
 		{
 			if (siz == 1)
 				siz = 0;
 			else
 				siz = 1;
 		}
-		else if (mouse_wheel_up() || (input_check_pressed("up") && running_on_deck() == 1))
+		else if (mouse_wheel_up() || (input_check_pressed("up") && running_on_deck() == true))
 		{
 			if (siz == 1)
 				siz = 0;

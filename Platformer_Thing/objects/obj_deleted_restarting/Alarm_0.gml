@@ -1,2 +1,2 @@
-global.game_restarting = 1;
+global.game_restarting = true;
 game_restart();
